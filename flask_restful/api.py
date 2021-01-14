@@ -5,6 +5,21 @@ app = Flask(__name__)
 api = Api(app)
 parse = reqparse.RequestParser()
 
+
+# 不带参数
+class Hello(Resource):
+    def get(self):
+        return {'hello': 'get'}
+
+    def post(self):
+        return {'hello': 'post'}
+
+    def put(self):
+        return {'hello': 'put'}
+
+    def delete(self):
+        return {'hello': 'delete'}
+
 users=[
     {
         'userid':1,
@@ -20,10 +35,7 @@ users=[
     }
 ]
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
-
+# 带参数
 class USERS(Resource):
     def get(self,userid):
         res=None
@@ -50,9 +62,13 @@ class USERS(Resource):
         return users
 
     def delete(self,userid):
-        pass
+        userid=request.form['userid']
+        for i in users:
+            if str(i.get('userid'))==str(userid):
+                users.remove(i)
+        return users
 
-api.add_resource(HelloWorld, '/')
+api.add_resource(Hello, '/')
 api.add_resource(USERS, '/users/<userid>')
 
 if __name__ == '__main__':

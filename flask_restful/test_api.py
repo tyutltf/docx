@@ -7,9 +7,24 @@ host = 'http://localhost:3030'
 
 
 class TestApi(unittest.TestCase):
-    def hello_world_get(self):
+    def hello_get(self):
         url = f'{host}'
         res = get(url).json()
+        return res
+
+    def hello_post(self):
+        url = f'{host}'
+        res = post(url).json()
+        return res
+
+    def hello_put(self):
+        url = f'{host}'
+        res = put(url).json()
+        return res
+
+    def hello_delete(self):
+        url = f'{host}'
+        res = delete(url).json()
         return res
 
     def user_get(self):
@@ -21,7 +36,7 @@ class TestApi(unittest.TestCase):
         url=f'{host}/users/2'
         data = {
                 "userid":2,
-                "age": 18,
+                "age": 20,
             }
         res=put(url,data=data).json()
         return res
@@ -46,10 +61,14 @@ class TestApi(unittest.TestCase):
         return res
 
     def test_all(self):
-        # print(self.hello_world_get())
+        print(self.hello_get())
+        print(self.hello_post())
+        print(self.hello_put())
+        print(self.hello_delete())
         # print(self.user_get())
-        print(self.user_put())
+        # print(self.user_put())
         # print(self.user_post())
+        # print(self.user_delete())
 
 
 if __name__ == "__main__":
