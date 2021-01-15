@@ -61,14 +61,14 @@ class TestApi(unittest.TestCase):
         return res
 
     def test_all(self):
-        print(self.hello_get())
-        print(self.hello_post())
-        print(self.hello_put())
-        print(self.hello_delete())
-        # print(self.user_get())
-        # print(self.user_put())
-        # print(self.user_post())
-        # print(self.user_delete())
+        # print(self.hello_get())
+        # print(self.hello_post())
+        # print(self.hello_put())
+        # print(self.hello_delete())
+        print(self.user_get())  
+        print(self.user_post())
+        print(self.user_put())
+        print(self.user_delete())
 
 
 if __name__ == "__main__":
