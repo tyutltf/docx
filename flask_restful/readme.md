@@ -35,3 +35,9 @@ restful api是用于在前端与后台进行通信的一套规范，使用这个
 400 | invalid request | 用户发出的请求有错误，服务器没有进行新建或修改数据的操作
 404 | not found | 用户发送的请求的url不存在
 500 | Internal server error | 服务器内部错误，出现了bug
+
+如何添加装饰器
+
+如何手动实现resource类
+
+parse的作用
