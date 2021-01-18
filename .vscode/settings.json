@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\ltf\\envs\\machine\\Scripts\\python.exe",
+    "python.pythonPath": "C:\\Users\\ltf\\envs\\konw_sharing\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true

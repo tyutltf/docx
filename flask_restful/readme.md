@@ -36,8 +36,9 @@ restful api是用于在前端与后台进行通信的一套规范，使用这个
 404 | not found | 用户发送的请求的url不存在
 500 | Internal server error | 服务器内部错误，出现了bug
 
-如何添加装饰器
+#### 高级用法
 
-如何手动实现resource类
+- 添加装饰器 api_plus里面
+- parse的作用 api_plus里面
+- 手动实现resource类
 
-parse的作用
