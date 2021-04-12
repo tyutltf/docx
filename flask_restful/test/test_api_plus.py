@@ -1,7 +1,7 @@
 import unittest
 from json import dumps
 
-from requests import get, post,put,delete
+from requests import get, post, put, delete
 
 host = 'http://localhost:3030'
 
@@ -19,21 +19,21 @@ class TestApi(unittest.TestCase):
 
     def user_get(self):
         url = f'{host}/users/1'
-        data={
-            'userid':1
+        data = {
+            'userid': 1
         }
-        res = get(url,data=data).json()
+        res = get(url, data=data).json()
         return res
 
     def user_post(self):
-        url=f'{host}/users/3'
+        url = f'{host}/users/3'
         data = {
-                "userid":3,
-                "username": "jack",
-                "age": 17,
-                "sex": "male",
-            }
-        res=post(url,data=data).json()
+            "userid": 3,
+            "username": "jack",
+            "age": 17,
+            "sex": "male",
+        }
+        res = post(url, data=data).json()
         return res
 
     def test_all(self):
@@ -41,6 +41,7 @@ class TestApi(unittest.TestCase):
         # print(self.hello_post())
         # print(self.user_get())
         print(self.user_post())
+
 
 if __name__ == "__main__":
     unittest.main()

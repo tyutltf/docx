@@ -1,5 +1,5 @@
 from flask import Flask, request
-from flask_restful import Api, reqparse,OrderedDict
+from flask_restful import Api, reqparse, OrderedDict
 from werkzeug.wrappers import Response as ResponseBase
 
 try:
@@ -9,6 +9,7 @@ except ImportError:
 
 app = Flask(__name__)
 api = Api(app)
+
 
 def with_metaclass(meta, *bases):
     """Create a base class with a metaclass."""
@@ -21,6 +22,7 @@ def with_metaclass(meta, *bases):
             return meta(name, bases, d)
 
     return type.__new__(metaclass, "temporary_class", (), {})
+
 
 # 构建一个不可变集合
 http_method_funcs = frozenset(
@@ -70,7 +72,7 @@ class View(object):
     # 设置此选项将禁用或强制启用自动选项处理。
     provide_automatic_options = None
 
-    # The canonical way to decorate class-based views is to decorate the return value of as_view(). 
+    # The canonical way to decorate class-based views is to decorate the return value of as_view().
     # 装饰基于类的视图的规范方法是装饰as_view()的返回值。
     # However since this moves parts of the logic from the class declaration to the place where it's hooked into the routing system.
     # 但是，这将把部分逻辑从类声明移动到与路由系统相连的地方。
@@ -111,7 +113,7 @@ class View(object):
 
         # We attach the view class to the view function for two reasons:
         # 我们将view类附加到view函数有两个原因
-        # first of all it allows us to easily figure out what class-based view this thing came from, 
+        # first of all it allows us to easily figure out what class-based view this thing came from,
         # 首先，它允许我们很容易地找出这个东西来自什么基于类的视图，
         # secondly it's also used for instantiating the view class so you can actually replace it with something else for testing purposes and debugging.
         # 其次，它也用于实例化视图类，这样你就可以用其他的东西来代替它，以进行测试和调试。
@@ -122,6 +124,7 @@ class View(object):
         view.methods = cls.methods
         view.provide_automatic_options = cls.provide_automatic_options
         return view
+
 
 class MethodViewType(type):
     """Metaclass for :class:`MethodView` that determines what methods the view
@@ -145,6 +148,7 @@ class MethodViewType(type):
 
             if methods:
                 cls.methods = methods
+
 
 class MethodView(with_metaclass(MethodViewType, View)):
     """A class-based view that dispatches request methods to the corresponding
@@ -174,6 +178,7 @@ class MethodView(with_metaclass(MethodViewType, View)):
 
         assert meth is not None, "Unimplemented method %r" % request.method
         return meth(*args, **kwargs)
+
 
 class Resource(MethodView):
     """
@@ -218,7 +223,8 @@ class Resource(MethodView):
             return resp
 
         representations = self.representations or OrderedDict()
-        mediatype = request.accept_mimetypes.best_match(representations, default=None)
+        mediatype = request.accept_mimetypes.best_match(
+            representations, default=None)
         print(mediatype)
         if mediatype in representations:
             data, code, headers = unpack(resp)
@@ -226,7 +232,6 @@ class Resource(MethodView):
             resp.headers['Content-Type'] = mediatype
             return resp
         return resp
-
 
 
 # 不带参数
