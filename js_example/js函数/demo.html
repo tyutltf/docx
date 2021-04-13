@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="demo.js"></script>
+	</head>
+	<body>
+		<p>单击“试一试”时，将调用一个函数。</p>
+
+		<p>该功能将显示一条消息。</p>
+
+		<button onclick="demo1()">试一试</button>
+
+		<p id="demo1"></p>
+
+		<p>单击“试一试”以使用参数来调用函数</p>
+
+		<button onclick="demo2('Harry Potter','Wizard')">试一试</button>
+
+		<p id="demo2"></p>
+
+		<p>单击其中一个按钮时，将调用一个函数。该函数将显示传递给它的参数。</p>
+
+		<form>
+			<input type="button" onclick="demo3('Good Morning!')" value="In the Morning">
+			<input type="button" onclick="demo3('Good Evening!')" value="In the Evening">
+		</form>
+
+		<p id="demo3"></p>
+
+		<h2>JavaScript 函数</h2>
+
+		<p>本例调用了一个执行计算的函数，然后返回结果：</p>
+
+		<p id="demo4"></p>
+
+		<script>
+			var x = demo4(7, 8);
+			document.getElementById("demo4").innerHTML = x;
+		</script>
+
+		<h2>JavaScript 函数</h2>
+
+		<p>本例调用函数把华氏度转换为摄氏度：</p>
+
+		<p id="demo5"></p>
+
+		<script>
+			document.getElementById("demo5").innerHTML = toCelsius(86);
+		</script>
+		
+		<p>不使用 () 访问函数将返回函数声明而不是函数结果：</p>
+		
+		<p id="demo6"></p>
+		
+		<script>
+			document.getElementById("demo6").innerHTML = toCelsius;
+		</script>
+	</body>
+</html>
