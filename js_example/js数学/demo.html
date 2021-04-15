@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="demo.js"></script>
+	</head>
+	<body>
+		<div>
+			<h1>JavaScript Math.PI</h1>
+			
+			<p>Math.PI 返回圆周长与直径的比率：</p>
+			
+			<p id="demo1"></p>
+
+			<button onclick="demo1()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.round()</h1>
+			
+			<p>Math.round(x) 返回 x 四舍五入到最接近的整数的值：</p>
+			
+			<p id="demo2"></p>
+			
+			<button onclick="demo2()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.pow()</h1>
+			
+			<p>Math.pow(x,y) 返回 x 的 y 次幂的值：</p>
+			
+			<p id="demo3"></p>
+			
+			<button onclick="demo3()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.sqrt()</h1>
+			
+			<p>Math.sqrt(x) 返回 x 的平方根：</p>
+			
+			<p id="demo4"></p>
+			
+			<button onclick="demo4()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.abs()</h1>
+			
+			<p>Math.abs(x) 返回 x 的绝对值：</p>
+			
+			<p id="demo5"></p>
+			
+			<button onclick="demo5()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.ceil()</h1>
+			
+			<p>Math.ceil() 把数字上舍入为最接近的整数：</p>
+			
+			<p id="demo6"></p>
+			
+			<button onclick="demo6()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.sin()</h1>
+			
+			<p>Math.sin(x) 返回 x（以弧度计）的正弦：</p>
+			
+			<p>以弧度计的角度 = (以度数计的角度) * PI / 180。</p>
+			
+			<p id="demo7"></p>
+			
+			<button onclick="demo7()">试一试</button>
+		</div>
+		<div>
+			<h1>JavaScript Math.max()</h1>
+			
+			<p>Math.max() 返回参数列表中的最高值：</p>
+			
+			<p id="demo8"></p>
+
+			<button onclick="demo8()">试一试</button>
+		</div>
+		<div>
+			<h2>JavaScript 摄氏度转华氏度</h2>
+			
+			<p>在下面的输入字段之一中插入一个数字：</p>
+			
+			<p><input id="c" onkeyup="convert('C')"> 摄氏度</p>
+			
+			<p><input id="f" onkeyup="convert('F')"> 华氏度</p> 
+			
+			<p>请注意，使用了 <b>Math.round()</b> 方法，因此结果将作为整数返回。</p>
+		</div>
+	</body>
+</html>
